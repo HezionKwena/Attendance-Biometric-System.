@@ -104,6 +104,12 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+
+            Container(
+              child: Card(
+                child: Text("Welcome", style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold, ),),
+              ),
+            )
           ],
         ),
       ),
