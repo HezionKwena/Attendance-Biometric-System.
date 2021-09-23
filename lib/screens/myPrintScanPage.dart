@@ -1,26 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hezion_s/shared_widgets/stacked_containers.dart';
-//import 'package:popup_box/popup_box.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class HomePage extends StatefulWidget {
-  static const String id = 'home_screen';
+class PrintScanPage extends StatefulWidget {
+
+  static const String id = 'print_scan_screen';
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _PrintScanPageState createState() => _PrintScanPageState();
 }
 
-class _HomePageState extends State<HomePage> {
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    //This is code to invoke the fingerprint scanning action.
-    //local auth package
-  }
-
+class _PrintScanPageState extends State<PrintScanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,8 +33,14 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                     Expanded(
+                      child: Container(
+                        child: SvgPicture.asset('assets/icons/print.svg'),
+                      ),
+                      flex: 3,
+                    ),
+                    Expanded(
+                      flex: 1,
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(5.0),
@@ -57,15 +53,11 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Text(
-                            'Use the enrolled fingerprint',
-                            style: kinfoTextStyling,
-                          ),
-                          Text(
                             'Make sure your finger is not wet or dirty',
                             style: kinfoTextStyling,
                           ),
                           Text(
-                            'Try again if the first scan is unsuccessful',
+                            'Try again if the first attempt is unsuccessful',
                             style: kinfoTextStyling,
                           ),
                           Text(
@@ -91,5 +83,3 @@ const kinfoTextStyling = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: 13,
 );
-
-
