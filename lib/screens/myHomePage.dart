@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hezion_s/shared_widgets/stacked_containers.dart';
-//import 'package:popup_box/popup_box.dart';
+import 'package:hezion_s/shared_widgets/shared_widgets.dart';
 
 class HomePage extends StatefulWidget {
   static const String id = 'home_screen';
@@ -13,16 +11,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-
-    //This is code to invoke the fingerprint scanning action.
-    //local auth package
-  }
-
-  @override
   Widget build(BuildContext context) {
+    const kinfoTextStyling = TextStyle(
+      fontWeight: FontWeight.w400, fontSize: 13);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -87,9 +78,10 @@ class _HomePageState extends State<HomePage> {
 }
 
 //used to style the text at the bottom
-const kinfoTextStyling = TextStyle(
-  fontWeight: FontWeight.w400,
-  fontSize: 13,
-);
+// TODO: Use meaningful names
+// const kinfoTextStyling = TextStyle(
+//   fontWeight: FontWeight.w400,
+//   fontSize: 13,
+// );
 
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hezion_s/shared_widgets/stacked_containers.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hezion_s/shared_widgets/shared_widgets.dart';
 
 class PrintScanPage extends StatefulWidget {
 
@@ -13,6 +13,9 @@ class PrintScanPage extends StatefulWidget {
 class _PrintScanPageState extends State<PrintScanPage> {
   @override
   Widget build(BuildContext context) {
+    const kinfoTextStyling = TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 13,);
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -79,7 +82,8 @@ class _PrintScanPageState extends State<PrintScanPage> {
 }
 
 //used to style the text at the bottom
-const kinfoTextStyling = TextStyle(
-  fontWeight: FontWeight.w400,
-  fontSize: 13,
-);
+// TODO: avoid global variables
+// const kinfoTextStyling = TextStyle(
+//   fontWeight: FontWeight.w400,
+//   fontSize: 13,
+// );

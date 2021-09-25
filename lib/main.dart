@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/myHomePage.dart';
-import 'screens/myPrintScanPage.dart';
-import 'screens/myLandingPage/myLandingPage.dart';
-import 'screens/myRegistrationPage.dart';
+import 'package:hezion_s/screens/screens.dart';
+
 
 void main() {
   runApp(MyApp());
@@ -26,9 +24,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         backgroundColor: Color(0xffE5E5E5),
       ),
-      initialRoute: LandingPage.id,
+      initialRoute: MyLandingPage.id,
       routes: {
-        LandingPage.id : (context) => LandingPage(),
+        MyLandingPage.id : (context) => MyLandingPage(),
         RegistrationPage.id : (context) => RegistrationPage(),
         HomePage.id : (context) => HomePage(),
         PrintScanPage.id : (context) => PrintScanPage(),
