@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "343507211138",
+    "project_id": "mypersonalprojects-f6345",
+    "storage_bucket": "mypersonalprojects-f6345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:343507211138:android:cb7cf7080aed4ad777359b",
+        "android_client_info": {
+          "package_name": "com.example.attendance_biometric_system"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "343507211138-ki01lsdb8a300sh7jnt0ejfbsflqo31r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.attendance_biometric_system",
+            "certificate_hash": "b930b2b4a4d4173d89384bab540e0dbee18be5c3"
+          }
+        },
+        {
+          "client_id": "343507211138-n217m1k661h24e36pklhk0ukd2re0sf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0uMS65vvlhAkt-plzV79ATWAFmKYY378"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "343507211138-n217m1k661h24e36pklhk0ukd2re0sf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
