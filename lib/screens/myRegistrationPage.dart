@@ -21,7 +21,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              //this hero widget ads an animation
+              //this hero widget adds an animation
               child: Hero(
                 tag: 'logo',
                 child: StackedContainers(),

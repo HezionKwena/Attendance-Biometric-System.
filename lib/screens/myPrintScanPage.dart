@@ -23,7 +23,7 @@ class _PrintScanPageState extends State<PrintScanPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              //this hero widget ads an animation
+              //this hero widget adds an animation
               child: Hero(
                 tag: 'logo',
                 child: StackedContainers(),
@@ -81,9 +81,3 @@ class _PrintScanPageState extends State<PrintScanPage> {
   }
 }
 
-//used to style the text at the bottom
-// TODO: avoid global variables
-// const kinfoTextStyling = TextStyle(
-//   fontWeight: FontWeight.w400,
-//   fontSize: 13,
-// );
