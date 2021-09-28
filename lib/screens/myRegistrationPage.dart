@@ -67,7 +67,93 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               InputField(hint: 'Enter your full name'),
                               InputField(hint: 'Enter your Admission number'),
                               InputField(hint: 'Enter your Parent\'s Phone Number' ),
-                              //turn this into a button and use it to navigate to the print_scan_page
+                              TextButton(
+                                  onPressed: (){
+                                    //Our sample success event popup
+                                    showDialog(context: context, builder: (context){
+                                      return Dialog(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(18.0),
+                                        ),
+                                        backgroundColor: Color(0xffE5E5E5),
+                                        child: Container(
+                                            height: 240.0,
+                                            child: Padding(
+                                              padding: EdgeInsets.all(15.0),
+                                              child: Column(
+                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                                children: [
+                                                  Text('You have been successfuly registered',
+                                                    style: TextStyle(
+                                                      fontSize: 18.0,
+                                                      color: Colors.green,
+                                                    ),
+                                                  ),
+                                                  Image(
+                                                    image: AssetImage('assets/icons/success.png'),
+                                                  ),
+                                                  ElevatedButton(
+                                                    style: ElevatedButton.styleFrom(
+                                                      primary: Color(0xff6C63FF),
+                                                      onPrimary: Color(0xffFFFFFF),
+                                                      minimumSize: Size(120.0, 40.0),
+                                                    ),
+                                                    onPressed:(){
+                                                      Navigator.pop(context);
+                                                    },
+                                                    child: Text('Ok'),
+                                                  ),
+                                                ],
+                                              ),
+                                            )
+                                        ),
+                                      );
+                                    }
+                                    );
+                                    //Our sample failed event popup
+                                    // showDialog(context: context, builder: (context){
+                                    //   return Dialog(
+                                    //     shape: RoundedRectangleBorder(
+                                    //       borderRadius: BorderRadius.circular(18.0),
+                                    //     ),
+                                    //     backgroundColor: Color(0xffE5E5E5),
+                                    //     child: Container(
+                                    //         height: 240.0,
+                                    //         child: Padding(
+                                    //           padding: EdgeInsets.all(15.0),
+                                    //           child: Column(
+                                    //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                    //             children: [
+                                    //               Text('Registration failed, please try again',
+                                    //                 style: TextStyle(
+                                    //                   fontSize: 18.0,
+                                    //                   color: Colors.redAccent,
+                                    //                 ),
+                                    //               ),
+                                    //               Image(
+                                    //                 image: AssetImage('assets/icons/fail.png'),
+                                    //               ),
+                                    //               ElevatedButton(
+                                    //                 style: ElevatedButton.styleFrom(
+                                    //                   primary: Color(0xff6C63FF),
+                                    //                   onPrimary: Color(0xffFFFFFF),
+                                    //                   minimumSize: Size(120.0, 40.0),
+                                    //                 ),
+                                    //                 onPressed:(){
+                                    //                   Navigator.pop(context);
+                                    //                 },
+                                    //                 child: Text('Ok'),
+                                    //               ),
+                                    //             ],
+                                    //           ),
+                                    //         )
+                                    //     ),
+                                    //   );
+                                    //   }
+                                    // );
+                                  },
+                                  child: Text('Pop me!')
+                              )
                             ],
                           ),
                         ),

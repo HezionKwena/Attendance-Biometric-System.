@@ -52,49 +52,63 @@ class _MyLandingPageState extends State<MyLandingPage> {
                               fontSize: 20.0,
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
+                          Column(
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Color(0xff6C63FF),
-                                    onPrimary: Color(0xffFFFFFF),
-                                    minimumSize: Size(150.0, 40.0),
-                                  ),
-                                  onPressed: (){
-                                    Navigator.pushNamed(context, RegistrationPage.id);
-                                  },
-                                  child: Text('REGISTER',
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                ),
+                              MyButton(
+                                onPressed: ()=>Navigator.pushNamed(context, RegistrationPage.id),
+                                text: "REGISTER",
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Color(0xff6C63FF),
-                                    onPrimary: Color(0xffFFFFFF),
-                                    minimumSize: Size(150.0, 40.0),
-                                  ),
-                                  onPressed: (){
-                                    Navigator.pushNamed(context, HomePage.id);
-                                  },
-                                  child: Text('SIGN IN',
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                ),
+                              SizedBox(height: MediaQuery.of(context).size.height * 0.04,),
+                              MyButton(
+                                onPressed: ()=>Navigator.pushNamed(context, HomePage.id),
+                                text: "SIGN IN",
                               ),
+                              SizedBox(height: MediaQuery.of(context).size.height * 0.04,),
                             ],
-                          ),
+                          )
+                          // Row(
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     Padding(
+                          //       padding: const EdgeInsets.all(5.0),
+                          //       child: ElevatedButton(
+                          //         style: ElevatedButton.styleFrom(
+                          //           primary: Color(0xff6C63FF),
+                          //           onPrimary: Color(0xffFFFFFF),
+                          //           minimumSize: Size(150.0, 40.0),
+                          //         ),
+                          //         onPressed: (){
+                          //           Navigator.pushNamed(context, RegistrationPage.id);
+                          //         },
+                          //         child: Text('REGISTER',
+                          //           style: TextStyle(
+                          //             fontSize: 20.0,
+                          //             fontWeight: FontWeight.w700,
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //     Padding(
+                          //       padding: const EdgeInsets.all(5.0),
+                          //       child: ElevatedButton(
+                          //         style: ElevatedButton.styleFrom(
+                          //           primary: Color(0xff6C63FF),
+                          //           onPrimary: Color(0xffFFFFFF),
+                          //           minimumSize: Size(150.0, 40.0),
+                          //         ),
+                          //         onPressed: (){
+                          //           Navigator.pushNamed(context, HomePage.id);
+                          //         },
+                          //         child: Text('SIGN IN',
+                          //           style: TextStyle(
+                          //             fontSize: 20.0,
+                          //             fontWeight: FontWeight.w700,
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
 
                         ],
                       ),
