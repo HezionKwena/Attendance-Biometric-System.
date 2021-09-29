@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hezion_s/screens/screens.dart';
 import 'package:hezion_s/shared_widgets/shared_widgets.dart';
 
-
 class RegistrationPage extends StatefulWidget {
-
   static const String id = 'registration_screen';
 
   @override
@@ -14,181 +12,83 @@ class RegistrationPage extends StatefulWidget {
 class _RegistrationPageState extends State<RegistrationPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
+        child: Scaffold(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              //this hero widget adds an animation
-              child: Hero(
-                tag: 'logo',
-                child: StackedContainers(),
+            // mainAxisAlignment: MainAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              //Logo
+              Align(
+                alignment: Alignment.topLeft,
+                child: Hero(
+                  tag: 'logo',
+                  child: StackedContainers(),
+                ),
               ),
-              flex: 1,
-            ),
-            Expanded(
-              flex: 3,
-              child: Container(
-                //adding the icon background onto this
+              // my Header
+              Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.only(top: 40.0, bottom: 30.0),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      //column inside an expanded for 2 intro texts
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text('Welcome !',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 18.0,
-                              ),
-                            ),
-                            Text('Let\'s help you enroll',
-                              style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 18.0,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //This column inside an expanded is to hold the textfields
-                      Expanded(
-                        flex: 4,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 0.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              InputField(hint: 'Enter your full name'),
-                              InputField(hint: 'Enter your Admission number'),
-                              InputField(hint: 'Enter your Parent\'s Phone Number' ),
-                              TextButton(
-                                  onPressed: (){
-                                    //Our sample success event popup
-                                    showDialog(context: context, builder: (context){
-                                      return Dialog(
-                                        shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                        ),
-                                        backgroundColor: Color(0xffE5E5E5),
-                                        child: Container(
-                                            height: 240.0,
-                                            child: Padding(
-                                              padding: EdgeInsets.all(15.0),
-                                              child: Column(
-                                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                children: [
-                                                  Text('You have been successfuly registered',
-                                                    style: TextStyle(
-                                                      fontSize: 18.0,
-                                                      color: Colors.green,
-                                                    ),
-                                                  ),
-                                                  Image(
-                                                    image: AssetImage('assets/icons/success.png'),
-                                                  ),
-                                                  ElevatedButton(
-                                                    style: ElevatedButton.styleFrom(
-                                                      primary: Color(0xff6C63FF),
-                                                      onPrimary: Color(0xffFFFFFF),
-                                                      minimumSize: Size(120.0, 40.0),
-                                                    ),
-                                                    onPressed:(){
-                                                      Navigator.pop(context);
-                                                    },
-                                                    child: Text('Ok'),
-                                                  ),
-                                                ],
-                                              ),
-                                            )
-                                        ),
-                                      );
-                                    }
-                                    );
-                                    //Our sample failed event popup
-                                    // showDialog(context: context, builder: (context){
-                                    //   return Dialog(
-                                    //     shape: RoundedRectangleBorder(
-                                    //       borderRadius: BorderRadius.circular(18.0),
-                                    //     ),
-                                    //     backgroundColor: Color(0xffE5E5E5),
-                                    //     child: Container(
-                                    //         height: 240.0,
-                                    //         child: Padding(
-                                    //           padding: EdgeInsets.all(15.0),
-                                    //           child: Column(
-                                    //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    //             children: [
-                                    //               Text('Registration failed, please try again',
-                                    //                 style: TextStyle(
-                                    //                   fontSize: 18.0,
-                                    //                   color: Colors.redAccent,
-                                    //                 ),
-                                    //               ),
-                                    //               Image(
-                                    //                 image: AssetImage('assets/icons/fail.png'),
-                                    //               ),
-                                    //               ElevatedButton(
-                                    //                 style: ElevatedButton.styleFrom(
-                                    //                   primary: Color(0xff6C63FF),
-                                    //                   onPrimary: Color(0xffFFFFFF),
-                                    //                   minimumSize: Size(120.0, 40.0),
-                                    //                 ),
-                                    //                 onPressed:(){
-                                    //                   Navigator.pop(context);
-                                    //                 },
-                                    //                 child: Text('Ok'),
-                                    //               ),
-                                    //             ],
-                                    //           ),
-                                    //         )
-                                    //     ),
-                                    //   );
-                                    //   }
-                                    // );
-                                  },
-                                  child: Text('Pop me!')
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                primary: Color(0xff6C63FF),
-                                onPrimary: Color(0xffFFFFFF),
-                              ),
-                              onPressed: (){
-                                Navigator.pushNamed(context, PrintScanPage.id);
-                              },
-                              child: Text('Enroll Fingerprint',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.w700,
-                                ),
-                              ),
-                            ),
-                            //row for the two texts that are side by side
-                          ],
-                        ),
-                      ),
+                      Text("Welcome !",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                            fontSize: 18,
+                          )),
+                      Text("Let\'s help you enroll",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
+                          ))
                     ],
-                  )
+                  )),
+
+              // My Form
+              Container(
+                padding: EdgeInsets.only(left: 10, right: 10),
+                  child: Form(
+                child: Column(
+                  children: [
+                    InputField(
+                      hint: "Enter your full Name",
+                    ),
+                    InputField(
+                      hint: "Enter your Admission Number",
+                    ),
+                    InputField(
+                      hint: "Enter your Parent\'s Phone Number",
+                    ),
+                  ],
+                ),
+              )),
+              Container(
+                  child: Text(
+                "Pop me!",
+                style: TextStyle(fontSize: 12, color: Colors.blue.shade500),
+              )),
+              Container(
+                padding: EdgeInsets.only(top: 30),
+                child: MaterialButton(
+                  height: MediaQuery.of(context).size.height * 0.09,
+                  color: Color(0xff6c63FF),
+                  onPressed: () {
+                    Navigator.pushNamed(context, PrintScanPage.id);
+                  },
+                  child: Text(
+                    'Enroll Fingerprint',
+                    style: TextStyle(
+                      fontSize: 18.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
-            ),
-          ],
-        ),
+            ]),
       ),
-    );
+    ));
   }
 }

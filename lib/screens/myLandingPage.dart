@@ -38,22 +38,22 @@ class _MyLandingPageState extends State<MyLandingPage> {
                         child: SvgPicture.asset('assets/icons/fingerprint_inforgraphic.svg'),
                         margin: EdgeInsets.all(15.0),
                       ),
-                      flex: 2,
+                      flex: 1,
                     ),
                     //Add expanded for dynamic scalling
                     Expanded(
                       flex: 1,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text('Your attendance starts here',
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20.0,
-                            ),
-                          ),
-                          Column(
+                        child:  Column(
                             children: [
+                              Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Text('Your attendance starts here',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 20.0,
+                                  ),
+                                ),
+                              ),
                               MyButton(
                                 onPressed: ()=>Navigator.pushNamed(context, RegistrationPage.id),
                                 text: "REGISTER",
@@ -66,52 +66,6 @@ class _MyLandingPageState extends State<MyLandingPage> {
                               SizedBox(height: MediaQuery.of(context).size.height * 0.04,),
                             ],
                           )
-                          // Row(
-                          //   mainAxisAlignment: MainAxisAlignment.center,
-                          //   children: [
-                          //     Padding(
-                          //       padding: const EdgeInsets.all(5.0),
-                          //       child: ElevatedButton(
-                          //         style: ElevatedButton.styleFrom(
-                          //           primary: Color(0xff6C63FF),
-                          //           onPrimary: Color(0xffFFFFFF),
-                          //           minimumSize: Size(150.0, 40.0),
-                          //         ),
-                          //         onPressed: (){
-                          //           Navigator.pushNamed(context, RegistrationPage.id);
-                          //         },
-                          //         child: Text('REGISTER',
-                          //           style: TextStyle(
-                          //             fontSize: 20.0,
-                          //             fontWeight: FontWeight.w700,
-                          //           ),
-                          //         ),
-                          //       ),
-                          //     ),
-                          //     Padding(
-                          //       padding: const EdgeInsets.all(5.0),
-                          //       child: ElevatedButton(
-                          //         style: ElevatedButton.styleFrom(
-                          //           primary: Color(0xff6C63FF),
-                          //           onPrimary: Color(0xffFFFFFF),
-                          //           minimumSize: Size(150.0, 40.0),
-                          //         ),
-                          //         onPressed: (){
-                          //           Navigator.pushNamed(context, HomePage.id);
-                          //         },
-                          //         child: Text('SIGN IN',
-                          //           style: TextStyle(
-                          //             fontSize: 20.0,
-                          //             fontWeight: FontWeight.w700,
-                          //           ),
-                          //         ),
-                          //       ),
-                          //     ),
-                          //   ],
-                          // ),
-
-                        ],
-                      ),
                     ),
                   ],
                 ),

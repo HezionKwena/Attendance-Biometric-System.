@@ -13,6 +13,7 @@ class MyButton extends StatelessWidget {
       color: Color(0xff6C63FF),
       child: Text(text, style: TextStyle(
         color:Colors.white,
+        fontSize: 18,
         fontWeight: FontWeight.bold,
       ),),
       onPressed: ()=> onPressed(),);
