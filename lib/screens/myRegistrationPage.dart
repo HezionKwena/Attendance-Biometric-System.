@@ -36,7 +36,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       Text("Welcome !",
                           style: TextStyle(
                             fontWeight: FontWeight.w700,
-                            fontSize: 18,
+                            fontSize: 24,
                           )),
                       Text("Let\'s help you enroll",
                           style: TextStyle(
@@ -48,43 +48,34 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
               // My Form
               Container(
-                padding: EdgeInsets.only(left: 10, right: 10),
+                  padding: EdgeInsets.only(left: 10, right: 10),
                   child: Form(
-                child: Column(
-                  children: [
-                    InputField(
-                      hint: "Enter your full Name",
+                    child: Column(
+                      children: [
+                        InputField(
+                          hint: "Enter your full Name",
+                        ),
+                        InputField(
+                          hint: "Enter your Admission Number",
+                        ),
+                        InputField(
+                          hint: "Enter your Parent\'s Phone Number",
+                        ),
+                      ],
                     ),
-                    InputField(
-                      hint: "Enter your Admission Number",
-                    ),
-                    InputField(
-                      hint: "Enter your Parent\'s Phone Number",
-                    ),
-                  ],
-                ),
-              )),
+                  )),
               Container(
                   child: Text(
                 "Pop me!",
-                style: TextStyle(fontSize: 12, color: Colors.blue.shade500),
+                style: TextStyle(fontSize: 18, color: Colors.blue.shade500),
               )),
               Container(
                 padding: EdgeInsets.only(top: 30),
-                child: MaterialButton(
-                  height: MediaQuery.of(context).size.height * 0.09,
-                  color: Color(0xff6c63FF),
+                child: MyButton(
                   onPressed: () {
                     Navigator.pushNamed(context, PrintScanPage.id);
                   },
-                  child: Text(
-                    'Enroll Fingerprint',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
+                  text: 'Enroll Fingerprint',
                 ),
               ),
             ]),
