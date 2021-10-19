@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hezion_s/shared_widgets/shared_widgets.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 
 class HomePage extends StatefulWidget {
   static const String id = 'home_screen';
@@ -9,6 +10,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  //method to send text
+  void _sendSMS(String message, List<String> recipents) async {
+    String _result = await sendSMS(message: message, recipients: recipents)
+        .catchError((onError) {
+      print(onError);
+    });
+    print(_result);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +73,15 @@ class _HomePageState extends State<HomePage> {
                             'If still unsuccessful, contact admin',
                             style: kinfoTextStyling,
                           ),
+                          //for checking out on how to send a text
+                          ElevatedButton(
+                              child: Text('Send text'),
+                              onPressed: (){
+                                String message = "First ever demo, lets do this prime";
+                                List<String> recipents = ["0740695071"];
+
+                                _sendSMS(message, recipents);
+                              })
                         ],
                       ),
                     ),

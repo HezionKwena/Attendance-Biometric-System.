@@ -2,15 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hezion_s/shared_widgets/shared_widgets.dart';
 
-class PrintScanPage extends StatefulWidget {
+class MyPrintScanPage extends StatefulWidget {
 
   static const String id = 'print_scan_screen';
+  final String? studentName;
+  final String? adminNumber;
+  final String? parentsPhoneNumber;
+
+  MyPrintScanPage({this.studentName, this.adminNumber, this.parentsPhoneNumber});
 
   @override
-  _PrintScanPageState createState() => _PrintScanPageState();
+  _MyPrintScanPageState createState() => _MyPrintScanPageState();
 }
 
-class _PrintScanPageState extends State<PrintScanPage> {
+class _MyPrintScanPageState extends State<MyPrintScanPage> {
+
+  final String url = " ";
+
+  @override
+  void initState() {
+    scanFingerPrint();
+    super.initState();
+  }
+
+  scanFingerPrint() async {
+    // TODO: Scan finger print
+    // Store finger print as file (firebase storage)
+    storefingerPrint();
+    // Save Data to firebase
+    await saveData();
+
+  }
+  storefingerPrint(){
+    //TODO: Firebase Storage;
+
+    //TODO: fingerprint url
+    setState(() {
+
+    });
+  }
+
+  saveData(){
+    if(url != null ){
+      try{
+        //TODO: try to save data to firebase
+      }catch(e){print(e);}
+    }
+  }
   @override
   Widget build(BuildContext context) {
     const kinfoTextStyling = TextStyle(
