@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:hezion_s/screens/screens.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
@@ -30,7 +34,7 @@ class MyApp extends StatelessWidget {
         MyLandingPage.id : (context) => MyLandingPage(),
         RegistrationPage.id : (context) => RegistrationPage(),
         HomePage.id : (context) => HomePage(),
-        PrintScanPage.id : (context) => PrintScanPage(),
+        MyPrintScanPage.id : (context) => MyPrintScanPage(),
       },
     );
   }
